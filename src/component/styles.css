@@ -1,0 +1,130 @@
+iframe#webpack-dev-server-client-overlay {
+  display: none;
+}
+
+
+*::before,*::after{
+  margin:0;
+  padding:0;
+}
+body{
+  overflow: auto;
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  gap:1em;
+}
+.main__nav-bar{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards{
+  background-color:white;
+
+}
+
+.card{
+  overflow-y: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%;
+  margin:0 auto;
+  display:flex;
+  flex-direction: column;
+  background-color:white;
+  box-shadow: -4px 14px 5px 2px rgba(0,0,0,0.23);
+  -webkit-box-shadow: -4px 14px 5px 2px rgba(0,0,0,0.23);
+  -moz-box-shadow: -4px 14px 5px 2px rgba(0,0,0,0.23);
+  border-radius: 10px;
+  height: 600px;
+}
+  .img{
+display:flex;
+justify-content: center;
+align-items: center;
+height:80%;
+width:100%;
+border-radius: 10px;
+cursor:grab;
+  }
+ .card-title{
+  font-size: 1em;
+ }
+  .card-buttons{
+    display:flex;
+  flex-direction: row;
+  justify-content: space;
+    width:150px;
+
+  }
+
+  .card-body{
+    height:20%;
+    display:flex;
+    flex-direction: column;
+    gap:1em;
+    margin-top:0.9em;
+    padding:0.5em;
+  }
+  .btn{
+    border-radius:10px;
+    border:none;
+    padding:0.5em;
+    width:40%;
+  }
+  .btn-view{
+    background-color: lime;
+  } 
+  .btn-add{
+    background-color: aqua;
+  }
+  .btn-view:hover{
+    background-color: red;
+cursor:pointer;
+transform: scale(1.1);
+  }
+  .page-loader{
+    display:block;
+    position:absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  }
+  .hidden{
+    display:none
+  }
+  .spinner {
+     width: 56px;
+     height: 56px;
+     display: grid;
+     animation: spinner-plncf9 4s infinite;
+  }
+  
+  .spinner::before,
+  .spinner::after {
+     content: "";
+     grid-area: 1/1;
+     border: 9px solid;
+     border-radius: 50%;
+     border-color: #474bff #474bff #0000 #0000;
+     mix-blend-mode: darken;
+     animation: spinner-plncf9 1s infinite linear;
+  }
+  
+  .spinner::after {
+     border-color: #0000 #0000 #dbdcef #dbdcef;
+     animation-direction: reverse;
+  }
+  
+  @keyframes spinner-plncf9 {
+     100% {
+        transform: rotate(1turn);
+     }
+  }
+  
