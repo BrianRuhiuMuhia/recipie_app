@@ -7,7 +7,7 @@ let cards=undefined
 function Main()
 {
     const [recipies,setRecipies]=useState([])
-    const [recipie,setRecipie]=useState("")
+    const [recipie,setRecipie]=useState("ugali")
    
   async function getRecipes()
   {
@@ -21,7 +21,17 @@ let result=undefined;
       result = await response.json();
     } catch (error) {
       console.log(error);
+      return(<div className="page-loader">
+      <div className="spinner"></div>
+      {
+        setTimeout(function()
+        {
+          setRecipie("")
+        },1000)
+      }
+    </div>)
     }
+
     return result
   }
 
@@ -30,21 +40,27 @@ let result=undefined;
       setRecipies(data.meals);
     },[])
   }) 
-   if(recipies.length>0)
+   if(recipies===null|| recipies.length<1  || recipies===undefined)
   {
-
-cards=recipies.map((recipe)=>{
-    return <Card image={recipe["strMealThumb"]} recipeName={recipe["strMeal"]} recipeInst={recipe["strInstructions"]} key={recipe["idMeal"]}/>
-      });
-      
-  }
-  else
-  {
-    return (
+    
+    setTimeout(function()
+    {
+      setRecipie("")
+    },1000)
+ return (
+        
       <div className="page-loader">
         <div className="spinner"></div>
       </div>
     )
+      
+  }
+  else
+  {
+    cards=recipies.map((recipe)=>{
+    return <Card image={recipe["strMealThumb"]} recipeName={recipe["strMeal"]} recipeInst={recipe["strInstructions"]} key={recipe["idMeal"]}/>
+      });
+   
   }
   return(
     <div className="main">
