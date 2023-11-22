@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react";
-import ImageSlider from "./ImageSlider";
 import Card from "./Card"
 import Navbar from "./Navbar";
 import "./styles.css"
@@ -7,7 +6,7 @@ let cards=undefined
 function Main()
 {
     const [recipies,setRecipies]=useState([])
-    const [recipie,setRecipie]=useState("ugali")
+    const [recipie,setRecipie]=useState("chicken")
    
   async function getRecipes()
   {
@@ -26,7 +25,7 @@ let result=undefined;
       {
         setTimeout(function()
         {
-          setRecipie("")
+          setRecipie("chicken")
         },1000)
       }
     </div>)
@@ -45,7 +44,7 @@ let result=undefined;
     
     setTimeout(function()
     {
-      setRecipie("")
+      setRecipie("chicken")
     },1000)
  return (
         
@@ -68,8 +67,8 @@ let result=undefined;
     <Navbar recipie={recipie} setRecipie={setRecipie} />
 
       </div>
-      <div className="main__image-slider">
- <ImageSlider deviceType={"desktop"}/>
+      <div className="cards">
+      {cards}
   
     </div>
     </div>
