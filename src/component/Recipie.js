@@ -40,6 +40,7 @@ export default function Recipe() {
 
   return (
     <div>
+        <img alt="" src={recipe["strMealThumb"]}></img>
       <h1>{recipe.strMeal}</h1>
       <p>{recipe.strInstructions}</p>
     </div>
