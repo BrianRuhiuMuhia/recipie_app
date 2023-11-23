@@ -1,14 +1,66 @@
-iframe#webpack-dev-server-client-overlay {
+/* iframe#webpack-dev-server-client-overlay {
   display: none;
-}
+} */
 
 
 *::before,*::after{
   margin:0;
   padding:0;
 }
-body{
-  overflow: auto;
+
+
+.searchBox {
+
+ margin:0 auto;
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 15px;
+
+}
+
+.searchBox:hover > .searchInput {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+background: white;
+color : #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: lime;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+  width: 150px;
+  padding: 0 6px;
+}
 }
 .main{
 display:grid;
@@ -104,6 +156,7 @@ transform: scale(1.1);
   justify-content: center;
   background-color: white;
   }
+
   .hidden{
     display:none
   }
@@ -135,7 +188,15 @@ transform: scale(1.1);
         transform: rotate(1turn);
      }
   }
-  @media screen and (min-width:900px)
+   @media screen and (min-width:400px)
+  {
+    .cards{
+      margin:0;
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media screen and (min-width:800px)
   {
     .cards{
       margin:0;
@@ -143,3 +204,4 @@ transform: scale(1.1);
       grid-template-columns: repeat(3,1fr);
     }
   }
+ 

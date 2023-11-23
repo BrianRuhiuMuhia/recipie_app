@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import {Link} from "react-router-dom"
 import Card from "./Card"
 import Navbar from "./Navbar";
 import "./styles.css"
@@ -57,7 +58,7 @@ let result=undefined;
   else
   {
     cards=recipies.map((recipe)=>{
-    return <Card image={recipe["strMealThumb"]} recipeName={recipe["strMeal"]} recipeInst={recipe["strInstructions"]} key={recipe["idMeal"]}/>
+    return <Link to={`recipie/${recipe['idMeal']}`}><Card image={recipe["strMealThumb"]} recipeName={recipe["strMeal"]} recipeInst={recipe["strInstructions"]} key={recipe["idMeal"]}/></Link>
       });
    
   }
