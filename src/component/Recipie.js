@@ -6,34 +6,32 @@ export default function Recipe() {
   const [measure, setMeasure] = useState([]);
   function downloadNote(note) {
     const blobInstructions = new Blob([note["strInstructions"]], {type: 'text/plain'});
-    const blobIngredients=new Blob(note["strIngredients"],{type:"text/plain"})
-    const blobs = [blobInstructions, blobIngredients]
-    const promises = blobs.map(blob => blob.arrayBuffer());
-    Promise.all(promises)
-  .then(arrayBuffers => {
-    // Concatenate the array buffers into one
-    const combinedArrayBuffer = arrayBuffers.reduce((accumulator, current) => {
-      const totalLength = accumulator.byteLength + current.byteLength;
-      const result = new Uint8Array(totalLength);
-      result.set(new Uint8Array(accumulator), 0);
-      result.set(new Uint8Array(current), accumulator.byteLength);
-      return result.buffer;
-    });
+//     const blobIngredients=new Blob(note["strIngredients"],{type:"text/plain"})
+//     const blobs = [blobInstructions, blobIngredients]
+//     const promises = blobs.map(blob => blob.arrayBuffer());
+//     Promise.all(promises)
+//   .then(arrayBuffers => {
+//     // Concatenate the array buffers into one
+//     const combinedArrayBuffer = arrayBuffers.reduce((accumulator, current) => {
+//       const totalLength = accumulator.byteLength + current.byteLength;
+//       const result = new Uint8Array(totalLength);
+//       result.set(new Uint8Array(accumulator), 0);
+//       result.set(new Uint8Array(current), accumulator.byteLength);
+//       return result.buffer;
+//     });
 
-    // Create a new blob from the combined array buffer
-    const combinedBlob = new Blob([combinedArrayBuffer]);
+    // const combinedBlob = new Blob([combinedArrayBuffer]);
     const link = document.createElement('a');
-    link.href = URL.createObjectURL(combinedBlob);
+    link.href = URL.createObjectURL(blobInstructions);
     link.download = note["strMeal"] + '.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    // Use the combinedBlob as needed
     console.log(combinedBlob);
-  })
-  .catch(error => {
-    console.error('An error occurred while converting the blobs:', error);
-  });
+//   })
+//   .catch(error => {
+//     console.error('An error occurred while converting the blobs:', error);
+//   });
 
 }
 function ObjectToArray(obj)
