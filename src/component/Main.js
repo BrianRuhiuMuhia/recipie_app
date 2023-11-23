@@ -63,10 +63,16 @@ let result=undefined;
    
   }
   return(
-    <div className="main">
+    <div className="container">
+  <div className="main">
       <div className="main__nav-bar">
     <Navbar recipie={recipie} setRecipie={setRecipie} />
-
+      </div>
+      <div className="main_page-image">
+      <img src={recipies[0]["strMealThumb"]} className="page-image"></img>
+      <div className="image-recipie">
+        <p>Simply Delicious Food</p>
+      </div>
       </div>
       <div className="cards">
       {cards}
@@ -74,6 +80,8 @@ let result=undefined;
     </div>
     </div>
     
+    </div>
+  
   )
 
 }
