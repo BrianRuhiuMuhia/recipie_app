@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom"
+
 export default function Recipe() {
   const [recipe, setRecipe] = useState(null);
   const [ingredients, setIngredients] = useState([]);
@@ -27,7 +28,7 @@ export default function Recipe() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    console.log(combinedBlob);
+    // console.log(combinedBlob);
 //   })
 //   .catch(error => {
 //     console.error('An error occurred while converting the blobs:', error);
@@ -114,6 +115,7 @@ return [arrIngredients,arrMeasure]
      </div>
         </div>
     </div>
+  
     </div>
     
   );
