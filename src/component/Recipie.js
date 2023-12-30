@@ -41,11 +41,11 @@ function ObjectToArray(obj)
     let arrMeasure=[]
     for(let element in obj)
     {
-if(element.includes("Ingredient") && obj[element]!="")
+if(element.includes("Ingredient") && obj[element]!=="")
 {
     arrIngredients.push(obj[element])
 }
-if(element.includes("Measure") && obj[element]!="")
+if(element.includes("Measure") && obj[element]!=="")
 {
     arrMeasure.push(obj[element])
 }
@@ -86,7 +86,7 @@ return [arrIngredients,arrMeasure]
     return (
       <div className="page-loader">
         <div className="spinner"></div>
-      </div>
+      </div> 
     );
   }
 
