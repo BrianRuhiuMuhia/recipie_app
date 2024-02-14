@@ -10,11 +10,6 @@
 a{color:black;
   text-decoration:none;
 }
-body{
-
-
-}
-
 .main{
 display:grid;
 grid-template-columns: 1fr;
@@ -37,7 +32,6 @@ cursor:pointer;
 }
 
 .card{
-
   font-family: Arial, Helvetica, sans-serif;
   margin:0 auto;
   display:flex;
@@ -50,7 +44,7 @@ cursor:pointer;
   /* height: 400px; */
 }
 .card:hover{
-  background-color: lime;
+  /* background-color: lime; */
   transform: scale(1.01);
 }
 .container{
@@ -211,5 +205,51 @@ height:500px;
       display:grid;
       grid-template-columns: repeat(3,1fr);
     }
+    
   }
- 
+  .form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"], input[type="email"], input[type="password"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .active {
+    color: #fff700;
+    cursor: pointer;
+}
+
+.inactive {
+    color: #000000;
+}

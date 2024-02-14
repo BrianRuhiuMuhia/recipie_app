@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom"
-
+import StarRating from './StarRating';
 export default function Recipe() {
   const [recipe, setRecipe] = useState(null);
   const [ingredients, setIngredients] = useState([]);
@@ -35,6 +35,7 @@ export default function Recipe() {
 //   });
 
 }
+
 function ObjectToArray(obj)
 {
     let arrIngredients=[]
@@ -80,7 +81,7 @@ return [arrIngredients,arrMeasure]
 
   useEffect(() => {
     getRecipe();
-  }, []);
+  });
 
   if (recipe === null) {
     return (
@@ -113,7 +114,12 @@ return [arrIngredients,arrMeasure]
             downloadNote(recipe)
         }}>Download</button>
      </div>
+     <div>
+          <span>Rate The Recipies</span>
+          <StarRating/>
         </div>
+        </div>
+        
     </div>
   
     </div>
